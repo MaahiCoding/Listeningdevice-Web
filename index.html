@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ListenIn — Smart Listening Device</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #13131a;
+      --border: #1e1e2e;
+      --accent: #6c63ff;
+      --accent-light: #9d98ff;
+      --text: #e8e8f0;
+      --muted: #7a7a9a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent-light); letter-spacing: -0.5px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent); color: #fff; border: none;
+      padding: 0.55rem 1.3rem; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600; cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 1.5rem 4rem;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108,99,255,0.15), transparent);
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.35);
+      color: var(--accent-light); font-size: 0.78rem; font-weight: 600;
+      padding: 0.3rem 0.9rem; border-radius: 999px; margin-bottom: 1.8rem;
+      letter-spacing: 0.04em;
+    }
+    .badge::before { content: "●"; font-size: 0.5rem; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;
+      max-width: 780px; margin-bottom: 1.4rem;
+    }
+    h1 span { color: var(--accent-light); }
+
+    .subtitle {
+      color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem);
+      max-width: 520px; margin-bottom: 2.5rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: var(--accent); color: #fff; border: none;
+      padding: 0.85rem 2rem; border-radius: 10px;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      box-shadow: 0 0 24px rgba(108,99,255,0.45);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(108,99,255,0.6); }
+    .btn-secondary {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.85rem 2rem; border-radius: 10px;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+
+    /* ── DEVICE VISUAL ── */
+    .device-wrap {
+      margin-top: 4rem;
+      width: min(340px, 85vw); aspect-ratio: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      box-shadow: 0 0 80px rgba(108,99,255,0.2);
+    }
+    .device-wrap::before, .device-wrap::after {
+      content: ""; position: absolute; border-radius: 50%;
+      border: 1px solid rgba(108,99,255,0.15);
+      animation: ring 3s linear infinite;
+    }
+    .device-wrap::before { inset: -20px; animation-delay: 0s; }
+    .device-wrap::after  { inset: -42px; animation-delay: 1.5s; }
+    @keyframes ring { 0%{opacity:0.6} 50%{opacity:0.15} 100%{opacity:0.6} }
+
+    .device-icon { font-size: 5rem; filter: drop-shadow(0 0 20px rgba(108,99,255,0.5)); }
+
+    /* ── FEATURES ── */
+    .features { padding: 6rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .section-label { color: var(--accent-light); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; margin-bottom: 0.8rem; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; text-align: center; letter-spacing: -0.5px; margin-bottom: 3.5rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── STATS ── */
+    .stats {
+      padding: 5rem 1.5rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .stats-inner { display: flex; justify-content: center; flex-wrap: wrap; gap: 3rem; max-width: 800px; margin: 0 auto; text-align: center; }
+    .stat-num { font-size: 2.8rem; font-weight: 800; color: var(--accent-light); }
+    .stat-label { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      padding: 6rem 1.5rem; text-align: center;
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(108,99,255,0.12), transparent);
+    }
+    .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 1rem; }
+    .cta-band p { color: var(--muted); margin-bottom: 2rem; }
+
+    /* ── EMAIL FORM ── */
+    .email-form { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+    .email-form input {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); padding: 0.75rem 1.2rem;
+      border-radius: 10px; font-size: 0.95rem; width: 260px;
+      outline: none; transition: border-color 0.2s;
+    }
+    .email-form input:focus { border-color: var(--accent); }
+    .email-form input::placeholder { color: var(--muted); }
+    #form-msg { margin-top: 0.8rem; font-size: 0.88rem; color: var(--accent-light); min-height: 1.2em; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+      color: var(--muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">ListenIn</div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#stats">About</a></li>
+      <li><a href="#cta">Pricing</a></li>
+    </ul>
+    <button class="nav-cta">Get Early Access</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Now in Beta</div>
+    <h1>Hear Everything.<br /><span>Miss Nothing.</span></h1>
+    <p class="subtitle">
+      ListenIn is an AI-powered listening device that captures, transcribes,
+      and surfaces what matters — in real time.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
+        Request Demo
+      </button>
+      <button class="btn-secondary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+        Learn More
+      </button>
+    </div>
+    <div class="device-wrap">
+      <span class="device-icon">🎙️</span>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <p class="section-label">What it does</p>
+    <h2 class="section-title">Built for clarity</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Real-Time Transcription</h3>
+        <p>Industry-leading speech-to-text with under 300 ms latency, even in noisy environments.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Smart Highlights</h3>
+        <p>AI automatically surfaces action items, decisions, and key moments from every conversation.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>On-Device Privacy</h3>
+        <p>All processing happens locally. Your audio never leaves your device unless you choose to share.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>40+ Languages</h3>
+        <p>Seamlessly handles multilingual conversations with automatic language detection.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Integrations</h3>
+        <p>Push summaries to Notion, Slack, or your calendar — with one tap.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔋</div>
+        <h3>All-Day Battery</h3>
+        <p>28-hour battery life in a device smaller than a AA battery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-num" data-target="12000">0</div>
+        <div class="stat-label">Beta Users</div>
+      </div>
+      <div>
+        <div class="stat-num" data-target="98">0</div>
+        <div class="stat-label">% Accuracy</div>
+      </div>
+      <div>
+        <div class="stat-num" data-target="40">0</div>
+        <div class="stat-label">Languages</div>
+      </div>
+      <div>
+        <div class="stat-num" data-target="28">0</div>
+        <div class="stat-label">Hours Battery</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" id="cta">
+    <h2>Be the first to listen smarter.</h2>
+    <p>Join the waitlist and get 3 months free when we launch.</p>
+    <div class="email-form">
+      <input type="email" id="email-input" placeholder="you@example.com" />
+      <button class="btn-primary" onclick="handleSubmit()">Join Waitlist</button>
+    </div>
+    <p id="form-msg"></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 ListenIn Inc.</span>
+    <span>
+      <a href="#">Privacy</a> &nbsp;·&nbsp;
+      <a href="#">Terms</a> &nbsp;·&nbsp;
+      <a href="#">Contact</a>
+    </span>
+  </footer>
+
+  <script>
+    // Counter animation
+    const counters = document.querySelectorAll('.stat-num[data-target]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const suffix = target >= 100 ? '' : (el.nextElementSibling.textContent.includes('%') ? '' : '');
+        let start = 0;
+        const step = target / 60;
+        const tick = () => {
+          start = Math.min(start + step, target);
+          el.textContent = Math.floor(start).toLocaleString();
+          if (start < target) requestAnimationFrame(tick);
+        };
+        tick();
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => observer.observe(c));
+
+    // Email form
+    function handleSubmit() {
+      const input = document.getElementById('email-input');
+      const msg = document.getElementById('form-msg');
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msg.style.color = '#ff6b6b';
+        msg.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      msg.style.color = 'var(--accent-light)';
+      msg.textContent = '🎉 You\'re on the list! We\'ll be in touch soon.';
+      input.value = '';
+    }
+
+    // Enter key on email input
+    document.getElementById('email-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') handleSubmit();
+    });
+  </script>
+</body>
+</html>

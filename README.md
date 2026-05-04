@@ -1,6 +1,6 @@
-# ListenIn — Marketing Website
+# Listening Device: Clarive — Marketing Website
 
-Landing page for **ListenIn**, an AI-powered listening device app that captures, transcribes, and surfaces what matters — in real time.
+Landing page for **Listening Device: Clarive**, an AI-powered listening device app that captures, transcribes, and surfaces what matters — in real time.
 
 ## What This Is
 

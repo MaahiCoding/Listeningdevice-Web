@@ -1,0 +1,130 @@
+/* ── LEGAL PAGES SHARED STYLES ── */
+
+/* Make logo a link */
+nav .logo { text-decoration: none; }
+
+.legal-page {
+  padding: 7rem 1.5rem 5rem;
+}
+
+.legal-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.legal-inner h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.legal-inner h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 2.5rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.2px;
+}
+
+.legal-inner h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.legal-inner p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+
+.legal-inner ul {
+  list-style: none;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0;
+}
+
+.legal-inner ul li {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 0.25rem 0 0.25rem 1.4rem;
+  position: relative;
+}
+
+.legal-inner ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.legal-inner a {
+  color: var(--accent-light);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(143,138,255,0.3);
+  transition: border-color 0.15s;
+}
+.legal-inner a:hover { border-color: var(--accent-light); }
+
+.effective-date {
+  font-size: 0.82rem !important;
+  color: var(--muted) !important;
+  margin-bottom: 2rem !important;
+  opacity: 0.7;
+}
+
+/* ── CONTACT PAGE ── */
+.contact-inner h1 { margin-bottom: 0.75rem; }
+
+.contact-sub {
+  font-size: 1.05rem !important;
+  color: var(--muted) !important;
+  max-width: 540px;
+  margin-bottom: 3rem !important;
+  line-height: 1.7 !important;
+}
+
+.contact-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s;
+}
+.contact-card:hover { border-color: var(--accent); }
+
+.contact-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+
+.contact-card h2 {
+  font-size: 1rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--text) !important;
+}
+
+.contact-card p {
+  margin-bottom: 0.25rem !important;
+  font-size: 0.9rem !important;
+}
+
+.contact-email {
+  font-size: 1.05rem !important;
+  font-weight: 600;
+  color: var(--accent-light) !important;
+  border-bottom: 1px solid rgba(143,138,255,0.3);
+}
+
+.cin {
+  margin-top: 0.5rem !important;
+  font-size: 0.78rem !important;
+  opacity: 0.5;
+}

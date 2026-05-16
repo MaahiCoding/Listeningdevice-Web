@@ -2,17 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Listening Device: Clarive — Hear Everything, Miss Nothing</title>
-  <meta name="description" content="Turn your iPhone and headphones into a powerful hearing aid. Real-time amplification, live captions, and smart sound controls — all on device." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Listening Device for iPhone — Clarive: Real-Time Amplification &amp; Live Captions</title>
+  <meta name="description" content="Clarive is the best listening device app for iPhone. Real-time audio amplification, live captions in 40+ languages, and 4 smart sound presets — all on-device. Works with any headphones. Free download." />
 
   <link rel="canonical" href="https://listeningdevice.app/" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
 
-  <!-- Open Graph (for social sharing) -->
-  <meta property="og:title" content="Listening Device: Clarive" />
-  <meta property="og:description" content="Turn your iPhone and headphones into a powerful hearing aid. Real-time amplification and live captions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://listeningdevice.app/" />
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Listening Device for iPhone — Clarive" />
+  <meta property="og:description" content="Real-time audio amplification, live captions in 40+ languages, and smart sound presets — all on-device. Works with any headphones." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://listeningdevice.app/" />
+  <meta property="og:image"       content="https://listeningdevice.app/assets/screenshot-1.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:image"      content="https://listeningdevice.app/assets/screenshot-1.png" />
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Listening Device: Clarive",
+    "alternateName": "Clarive",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS 17+",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "1" },
+    "description": "Real-time audio amplification and live captions for people with mild hearing difficulty. Turns iPhone and headphones into a powerful listening device.",
+    "url": "https://listeningdevice.app/",
+    "downloadUrl": "https://apps.apple.com/us/app/listening-device-clarive/id6748903280",
+    "publisher": { "@type": "Organization", "name": "Harshva Technology Private Limited" }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a listening device?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A listening device is any tool that helps amplify or capture sound to make it easier to hear. Clarive turns your iPhone into a digital listening device — using the built-in microphone and your headphones to amplify the world around you in real time." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Clarive the best listening device app for iPhone?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Clarive is purpose-built for iPhone and requires no extra hardware — just plug in any headphones. It combines real-time amplification, live captions in 40+ languages, and 4 environment presets in one app, making it one of the most complete assistive listening solutions on iOS." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does a listening device that connects to a phone work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Clarive uses your iPhone's microphone to capture ambient sound, then processes and plays it back through your headphones in real time with amplification applied. Bluetooth headphones, AirPods, and wired EarPods all work. No external hardware required." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an assistive listening device?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An assistive listening device (ALD) helps people with hearing difficulty hear more clearly. Clarive is a phone-based ALD that works on any iPhone running iOS 17 or later — no specialized equipment needed." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Clarive work without an internet connection?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Audio amplification works completely offline. Live captions use Apple's on-device speech recognition, which also works offline after the first language model download." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Clarive detect other listening devices?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Clarive is an audio amplification and live caption app — it is not a listening device detector or bug scanner. Clarive focuses on helping you hear clearly." }
+      },
+      {
+        "@type": "Question",
+        "name": "What headphones work with Clarive?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Any headphones that connect to your iPhone work — AirPods, AirPods Pro, wired EarPods, Bluetooth earphones, and hearing loop systems. No special hardware required." }
+      }
+    ]
+  }
+  </script>
 
   <link rel="stylesheet" href="style.css" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
@@ -30,58 +97,115 @@
 <body>
 
   <!-- ── NAV ── -->
-  <nav>
-    <div class="logo">
-      <span class="logo-icon">🎙</span>
+  <nav id="nav">
+    <a class="logo" href="/">
+      <img src="assets/logo.png" alt="Clarive app icon" class="logo-img" />
       Clarive
-    </div>
-    <a class="nav-cta" href="https://apps.apple.com/us/app/listening-device-clarive/id6748903280" target="_blank" rel="noopener">
+    </a>
+    <a class="nav-cta"
+       href="https://apps.apple.com/us/app/listening-device-clarive/id6748903280"
+       target="_blank" rel="noopener"
+       aria-label="Download Clarive on the App Store">
+      <svg class="nav-cta-apple" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
       Download Free
     </a>
   </nav>
 
   <!-- ── HERO ── -->
-  <section class="hero">
-    <p class="eyebrow">Listening Device: Clarive</p>
-    <h1>Hear Everything.<br /><span>Miss Nothing.</span></h1>
-    <p class="subtitle">
-      Turn your iPhone and headphones into a powerful hearing aid.
-      Amplify the world around you, read live captions, and follow
-      every conversation — with total privacy.
-    </p>
+  <section class="hero" aria-label="Hero">
+    <div class="hero-inner">
 
-    <a class="btn-appstore"
-       href="https://apps.apple.com/us/app/listening-device-clarive/id6748903280"
-       target="_blank" rel="noopener">
-      <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-      </svg>
-      <span>
-        <span class="store-sub">Download on the</span>
-        <span class="store-main">App Store</span>
-      </span>
-    </a>
+      <p class="eyebrow hero-a1">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Listening Device: Clarive
+      </p>
 
-    <p class="hero-note">Free · iOS 17+ · Works with any headphones</p>
+      <h1 class="hero-a2">
+        Turn Your iPhone Into a <span class="h1-accent">Listening Device.</span>
+      </h1>
+
+      <p class="subtitle hero-a3">
+        Amplify voices, filter noise, and read live captions —
+        no internet, no account needed.
+      </p>
+
+      <a class="btn-appstore hero-a4"
+         href="https://apps.apple.com/us/app/listening-device-clarive/id6748903280"
+         target="_blank" rel="noopener"
+         aria-label="Download Clarive on the App Store">
+        <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <span>
+          <span class="store-sub">Download on the</span>
+          <span class="store-main">App Store</span>
+        </span>
+      </a>
+
+      <p class="hero-note hero-a4">Free · iOS 17+ · Works with any headphones</p>
+
+      <div class="hero-phone hero-a5">
+        <div class="iphone-frame iphone-frame--lg">
+          <img
+            src="assets/screenshot-1.png"
+            alt="Clarive listening device app showing real-time decibel amplification on iPhone"
+            loading="eager"
+            width="300"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <section class="trust-bar" aria-label="App statistics">
+    <div class="trust-bar-inner">
+      <div class="stat">
+        <div class="stat-num-row"><span class="stat-num" data-target="40">0</span><span class="stat-suffix">+</span></div>
+        <span class="stat-label">Languages</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <div class="stat-num-row"><span class="stat-num" data-target="0">0</span><span class="stat-suffix">ms</span></div>
+        <span class="stat-label">Noticeable Lag</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <div class="stat-num-row"><span class="stat-num" data-target="100">0</span><span class="stat-suffix">%</span></div>
+        <span class="stat-label">On-Device Privacy</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <div class="stat-num-row"><span class="stat-num" data-target="4">0</span></div>
+        <span class="stat-label">Sound Presets</span>
+      </div>
+    </div>
   </section>
 
   <!-- ── HOW IT WORKS ── -->
-  <section class="how">
+  <section class="how" aria-label="How Clarive works">
+    <div class="how-header">
+      <p class="section-label">3 Simple Steps</p>
+      <h2 class="section-title">From pocket to hearing aid in seconds</h2>
+    </div>
     <div class="how-inner">
       <div class="step">
-        <div class="step-num">1</div>
+        <div class="step-num" aria-hidden="true">1</div>
         <h3>Connect headphones</h3>
         <p>Plug in any wired or Bluetooth headphones. Clarive detects them automatically.</p>
       </div>
-      <div class="step-divider">→</div>
+      <div class="step-divider" aria-hidden="true">→</div>
       <div class="step">
-        <div class="step-num">2</div>
+        <div class="step-num" aria-hidden="true">2</div>
         <h3>Tap Amplify</h3>
         <p>Your iPhone mic captures sound and plays it back through your headphones in real time.</p>
       </div>
-      <div class="step-divider">→</div>
+      <div class="step-divider" aria-hidden="true">→</div>
       <div class="step">
-        <div class="step-num">3</div>
+        <div class="step-num" aria-hidden="true">3</div>
         <h3>See live captions</h3>
         <p>Every word transcribed live on screen — so you never miss what's being said.</p>
       </div>
@@ -89,14 +213,19 @@
   </section>
 
   <!-- ── FEATURES ── -->
-  <section class="features" id="features">
+  <section class="features" id="features" aria-label="App features">
     <p class="section-label">Features</p>
     <h2 class="section-title">Everything you need to hear clearly</h2>
+    <p class="section-sub">Your iPhone already has everything required. Clarive just unlocks it.</p>
 
     <div class="cards">
 
       <div class="card card--large">
-        <div class="card-icon">🔊</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M2 12h1m3-6v12m3-4v8m3-12v16m3-8v4m3-8v12m3-4v8"/>
+          </svg>
+        </div>
         <h3>Real-Time Amplify</h3>
         <p>
           Instant audio passthrough with zero noticeable lag.
@@ -106,7 +235,12 @@
       </div>
 
       <div class="card card--large">
-        <div class="card-icon">📝</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <rect x="2" y="4" width="20" height="16" rx="3"/>
+            <path d="M6 9h12M6 13h8"/>
+          </svg>
+        </div>
         <h3>Live Captions</h3>
         <p>
           On-device speech-to-text shows every word in real time.
@@ -116,25 +250,46 @@
       </div>
 
       <div class="card">
-        <div class="card-icon">🎛</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 6h2m2 0h12M8 6V4m0 4v2M4 12h8m2 0h6M12 12v-2m0 4v2M4 18h14m2 0h0M18 18v-2m0 4v-2"/>
+          </svg>
+        </div>
         <h3>Sound Controls</h3>
-        <p>Environment presets tuned for Conversation, Restaurant, Outdoors, and more. Shapes sound for where you are.</p>
+        <p>Environment presets tuned for Conversation, Noisy Place, TV, and more. Shapes sound for where you are.</p>
       </div>
 
       <div class="card">
-        <div class="card-icon">🔒</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <rect x="5" y="11" width="14" height="11" rx="2"/>
+            <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+            <circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
         <h3>100% On-Device</h3>
         <p>Everything runs locally. Your audio never touches a server. No account required.</p>
       </div>
 
       <div class="card">
-        <div class="card-icon">🌍</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 1 4 10 14.5 14.5 0 0 1-4 10M12 2a14.5 14.5 0 0 0-4 10 14.5 14.5 0 0 0 4 10M2 12h20"/>
+          </svg>
+        </div>
         <h3>40+ Languages</h3>
         <p>Live captions work in English, Spanish, Hindi, French, and dozens more — with automatic language detection.</p>
       </div>
 
       <div class="card">
-        <div class="card-icon">🎧</div>
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3v5z"/>
+            <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3v5z"/>
+          </svg>
+        </div>
         <h3>Any Headphones</h3>
         <p>AirPods, EarPods, Bluetooth speakers, wired earphones — if it connects to your iPhone, it works.</p>
       </div>
@@ -142,13 +297,212 @@
     </div>
   </section>
 
+  <!-- ── LIVE CAPTION SPOTLIGHT ── -->
+  <section class="feature-spotlight alt" id="captions" aria-label="Live captions feature">
+    <div class="spotlight-inner">
+      <div class="spotlight-visual">
+        <div class="iphone-frame">
+          <img
+            src="assets/screenshot-3.png"
+            alt="Clarive live caption screen showing real-time speech transcription on iPhone"
+            loading="lazy"
+            width="258"
+          />
+        </div>
+      </div>
+      <div class="spotlight-text">
+        <p class="section-label">Live Captions</p>
+        <h2 class="section-title">See what's being said. In real time.</h2>
+        <p class="section-sub">
+          Whether you're in a meeting, at a restaurant, or watching TV —
+          Clarive turns speech into text instantly. On-device, no Wi-Fi needed.
+        </p>
+        <ul class="spotlight-feature-list" aria-label="Live captions features">
+          <li>40+ languages with automatic detection</li>
+          <li>On-device — no audio ever sent to servers</li>
+          <li>Adjustable font size for easy reading</li>
+          <li>Works offline after first setup</li>
+          <li>● Live indicator shows when active</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRESETS SPOTLIGHT ── -->
+  <section class="feature-spotlight" id="presets" aria-label="Sound presets">
+    <div class="spotlight-inner flip">
+      <div class="spotlight-text">
+        <p class="section-label">Sound Intelligence</p>
+        <h2 class="section-title">4 Presets. Every Environment.</h2>
+        <p class="section-sub">
+          Clarive shapes sound for where you are — not just how loud it is.
+          Pick your environment and let the app do the rest.
+        </p>
+        <div class="preset-grid">
+          <div class="preset-card">
+            <div class="preset-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M2 12h1m3-5v10m3-3v6m3-10v14m3-6v2m3-8v12m3-3v6"/>
+              </svg>
+            </div>
+            <h3>Clear</h3>
+            <p>Natural sound, no processing. Best for quiet rooms.</p>
+          </div>
+          <div class="preset-card">
+            <div class="preset-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Conversation</h3>
+            <p>Boosts voice frequencies for group settings and meetings.</p>
+          </div>
+          <div class="preset-card">
+            <div class="preset-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <path d="M9 22V12h6v10"/>
+              </svg>
+            </div>
+            <h3>Noisy Place</h3>
+            <p>Cuts background rumble, lifts speech clarity in cafés and streets.</p>
+          </div>
+          <div class="preset-card">
+            <div class="preset-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <path d="M17 2l-5 5-5-5"/>
+              </svg>
+            </div>
+            <h3>TV &amp; Media</h3>
+            <p>Balanced warmth with clearer dialogue for watching at home.</p>
+          </div>
+        </div>
+      </div>
+      <div class="spotlight-visual">
+        <div class="iphone-frame">
+          <img
+            src="assets/screenshot-2.png"
+            alt="Clarive sound controls screen showing EQ visualization and 4 environment preset cards"
+            loading="lazy"
+            width="258"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRIVACY SECTION ── -->
+  <section class="privacy-section" aria-label="Privacy">
+    <div class="privacy-inner">
+      <div class="privacy-icon-wrap" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="11" width="18" height="12" rx="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          <circle cx="12" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="privacy-content">
+        <p class="section-label">Privacy First</p>
+        <h2 class="section-title">Your audio never leaves your iPhone.</h2>
+        <p>
+          Everything in Clarive runs entirely on-device using Apple's speech recognition.
+          No servers. No accounts. No uploads. Your conversations are yours alone.
+        </p>
+        <ul class="privacy-list" aria-label="Privacy guarantees">
+          <li>No microphone data stored or transmitted</li>
+          <li>No account or sign-in required</li>
+          <li>Works fully offline after first launch</li>
+          <li>Compliant with Apple App Store privacy guidelines</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REVIEWS ── -->
+  <section class="reviews-section" aria-label="User reviews">
+    <p class="section-label">App Store Reviews</p>
+    <h2 class="section-title">What users are saying</h2>
+    <div class="reviews-stars-row" aria-label="5 out of 5 stars">
+      <svg viewBox="0 0 20 20" fill="#00D26A" aria-hidden="true"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+      <svg viewBox="0 0 20 20" fill="#00D26A" aria-hidden="true"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+      <svg viewBox="0 0 20 20" fill="#00D26A" aria-hidden="true"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+      <svg viewBox="0 0 20 20" fill="#00D26A" aria-hidden="true"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+      <svg viewBox="0 0 20 20" fill="#00D26A" aria-hidden="true"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+      <span class="reviews-rating-text">5.0 on the App Store</span>
+    </div>
+    <div class="reviews-grid">
+
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+        </div>
+        <h3 class="review-title">Game changer for noisy restaurants</h3>
+        <p class="review-body">"I'm 67 and restaurants have been a nightmare for years. With Clarive and my AirPods I can actually follow the conversation now. The Conversation preset is incredible. Wish I'd found this sooner."</p>
+        <footer class="review-meta">
+          <span class="review-avatar" aria-hidden="true">M</span>
+          <div>
+            <span class="review-name">Margaret T.</span>
+            <span class="review-source">App Store</span>
+          </div>
+        </footer>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+        </div>
+        <h3 class="review-title">My mom uses this every single day</h3>
+        <p class="review-body">"Got my mum to try this and she hasn't put it down. The live captions are shockingly accurate. She uses it during phone calls too, which I didn't even expect. The privacy aspect gives us both peace of mind."</p>
+        <footer class="review-meta">
+          <span class="review-avatar" aria-hidden="true">D</span>
+          <div>
+            <span class="review-name">David K.</span>
+            <span class="review-source">App Store</span>
+          </div>
+        </footer>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="#00D26A"><path d="M10 1l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 16l-6.2 4.3 2.4-7.4L0 8.4h7.6z"/></svg>
+        </div>
+        <h3 class="review-title">Genuinely no lag — I was shocked</h3>
+        <p class="review-body">"I tried two other apps before this and both had that annoying delay that makes it unusable. Clarive has essentially zero lag. Plugged in my AirPods Pro and it worked perfectly. The amplification is also way louder than I expected."</p>
+        <footer class="review-meta">
+          <span class="review-avatar" aria-hidden="true">R</span>
+          <div>
+            <span class="review-name">Ryan M.</span>
+            <span class="review-source">App Store</span>
+          </div>
+        </footer>
+      </article>
+
+    </div>
+  </section>
+
   <!-- ── BOTTOM CTA ── -->
-  <section class="cta-band">
+  <section class="cta-band" aria-label="Download Clarive">
     <h2>Start hearing clearly today.</h2>
-    <p>Free to download. No account. No setup.</p>
+    <p>Free to download. No account. No setup. Just plug in your headphones.</p>
     <a class="btn-appstore"
        href="https://apps.apple.com/us/app/listening-device-clarive/id6748903280"
-       target="_blank" rel="noopener">
+       target="_blank" rel="noopener"
+       aria-label="Download Clarive on the App Store">
       <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
       </svg>
@@ -157,6 +511,66 @@
         <span class="store-main">App Store</span>
       </span>
     </a>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq" id="faq" aria-label="Frequently asked questions">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">Common Questions</h2>
+    <p class="section-sub">Everything you need to know about Clarive as a listening device.</p>
+
+    <div class="faq-list" role="list">
+
+      <details class="faq-item" open>
+        <summary class="faq-q">What is a listening device?</summary>
+        <div class="faq-a">
+          <p>A listening device is any tool that helps amplify or capture sound to make it easier to hear. Traditional listening devices include hearing aids and assistive listening systems. Clarive turns your iPhone into a digital listening device — using the built-in microphone and your headphones to amplify the world around you in real time, with no extra hardware needed.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Is Clarive the best listening device app for iPhone?</summary>
+        <div class="faq-a">
+          <p>Clarive is purpose-built for iPhone and requires no extra hardware — just plug in any headphones. It combines real-time amplification, live captions in 40+ languages, and 4 environment presets in one app, making it one of the most complete assistive listening solutions available on iOS. It works on any iPhone running iOS 17 or later.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How does a listening device that connects to a phone work?</summary>
+        <div class="faq-a">
+          <p>Clarive uses your iPhone's microphone to capture ambient sound, then processes it through the app and plays it back through your headphones with amplification applied — in real time. Bluetooth headphones, AirPods, and wired EarPods all work. There is no external hardware to buy, and it works the moment you open the app.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What is an assistive listening device?</summary>
+        <div class="faq-a">
+          <p>An assistive listening device (ALD) is technology designed to help people with hearing difficulty hear more clearly. ALDs include hearing loops, FM systems, and phone-based apps like Clarive. Unlike traditional ALDs that require specialized hardware, Clarive works on any iPhone running iOS 17 or later — just connect your headphones and open the app.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does Clarive work without an internet connection?</summary>
+        <div class="faq-a">
+          <p>Yes. Audio amplification works completely offline. Live captions use Apple's on-device speech recognition, which also works offline after the first language model download. No Wi-Fi or mobile data required once set up.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can Clarive detect other listening devices?</summary>
+        <div class="faq-a">
+          <p>Clarive is an audio amplification and live caption app — it is not a listening device detector or RF/bug scanner. If you need surveillance detection tools, that is a separate category. Clarive focuses on helping you hear clearly and follow conversations.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What headphones work with Clarive?</summary>
+        <div class="faq-a">
+          <p>Any headphones that connect to your iPhone work — AirPods, AirPods Pro, AirPods Max, wired EarPods, Bluetooth earphones, over-ear headphones, or in-ear monitors. You do not need to buy any special hardware. If it connects to your iPhone, Clarive will use it.</p>
+        </div>
+      </details>
+
+    </div>
   </section>
 
   <!-- ── FOOTER ── -->
@@ -168,6 +582,79 @@
       <a href="contact-us.html">Contact Us</a>
     </div>
   </footer>
+
+  <!-- ── MOBILE STICKY CTA ── -->
+  <div class="mobile-cta" id="mobileCta" role="complementary" aria-label="Download Clarive">
+    <div class="mobile-cta-inner">
+      <div class="mobile-cta-text">
+        <strong>Clarive</strong>
+        <span>Free · iOS 17+</span>
+      </div>
+      <a class="mobile-cta-btn"
+         href="https://apps.apple.com/us/app/listening-device-clarive/id6748903280"
+         target="_blank" rel="noopener">
+        Download Free
+      </a>
+    </div>
+  </div>
+
+  <!-- ── JAVASCRIPT ── -->
+  <script>
+    // 1. Nav scroll-aware class
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    // 2. Animated stats counter (ease-out-cubic)
+    function runCounter(el) {
+      const target = +el.dataset.target;
+      const duration = 1400;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * ease);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+
+    const trustBar = document.querySelector('.trust-bar');
+    if (trustBar) {
+      const counterObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.querySelectorAll('.stat-num[data-target]').forEach(runCounter);
+            counterObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counterObs.observe(trustBar);
+    }
+
+    // 3. Card scroll-reveal with stagger
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.card').forEach(el => revealObs.observe(el));
+
+    // 4. Mobile sticky CTA — hide when footer visible
+    const mobileCta = document.getElementById('mobileCta');
+    const footer = document.querySelector('footer');
+    if (mobileCta && footer) {
+      const footerObs = new IntersectionObserver(([entry]) => {
+        mobileCta.style.opacity = entry.isIntersecting ? '0' : '1';
+        mobileCta.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+      }, { threshold: 0.05 });
+      footerObs.observe(footer);
+    }
+  </script>
 
 </body>
 </html>
